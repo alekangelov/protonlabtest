@@ -1,0 +1,107 @@
+.plans {
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include smallBreak {
+      flex-flow: column;
+      align-items: start;
+    }
+    &__right {
+      display: flex;
+      .select-box {
+        margin-left: 2rem;
+        @include smallBreak {
+          margin: 1rem 0;
+          width: 100%;
+        }
+      }
+      @include smallBreak {
+        flex-flow: column;
+        width: 100%;
+      }
+    }
+  }
+  &-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @include bigBreak {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include smallBreak {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  &-single {
+    padding: 3rem;
+    border: 1px solid $opaque;
+    position: relative;
+    border-right: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    button {
+      margin-top: 2rem;
+    }
+    @include bigBreak {
+      &:nth-child(2n) {
+        border-right: 1px solid $opaque;
+      }
+    }
+
+    &:last-child {
+      border-right: 1px solid $opaque;
+    }
+    @include smallBreak {
+      border-right: 1px solid $opaque;
+    }
+    .name {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .popular {
+      position: absolute;
+      top: 1rem;
+      left: 50%;
+      color: $green;
+      width: max-content;
+      font-size: 1.25rem;
+      font-weight: 300;
+      transform: translate(-50%, 0);
+    }
+    .description {
+      margin: 1rem 0;
+      text-align: center;
+    }
+    .pricing {
+      text-align: center;
+      margin: 1rem 0;
+      .big {
+        font-weight: 600;
+        font-size: 1.5rem;
+      }
+    }
+    .features {
+      margin: 1rem 0;
+      list-style-type: none;
+      li {
+        margin: 1rem 0 1rem 2rem;
+        position: relative;
+        &:before {
+          position: absolute;
+          left: -2rem;
+          top: 50%;
+          width: 0.25rem;
+          transform: translate(0, -50%) rotate(45deg);
+          height: 0.25rem;
+          background: none;
+          content: "";
+          border-top: 1px solid black;
+          border-right: 1px solid black;
+          opacity: 0.2;
+        }
+      }
+    }
+  }
+}

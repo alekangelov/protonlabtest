@@ -1,0 +1,26 @@
+$blue: #6880dd;
+$black: black;
+$opaque: #f0f3f6;
+$green: #8ebd6e;
+
+$colors: (
+  "primary": $blue,
+  "black": $black,
+  "secondary": $opaque,
+  "success": $green,
+);
+
+$bigBreak: 1340px;
+$smallBreak: 768px;
+
+@mixin bigBreak {
+  @media (max-width: $bigBreak) {
+    @content;
+  }
+}
+
+@mixin smallBreak {
+  @media (max-width: $smallBreak) {
+    @content;
+  }
+}
